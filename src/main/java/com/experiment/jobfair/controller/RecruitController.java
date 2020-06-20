@@ -54,4 +54,20 @@ public class RecruitController {
     public Recruit delRecruit(@RequestParam Integer id){
         return recruitService.delRecruit(id);
     }
+
+    @RequestMapping(value = "/queryRecruit",method = RequestMethod.GET)
+    public Map getAll(@RequestParam Integer pageNum,@RequestParam String keywords){
+        if (pageNum == null || pageNum == 0)
+        {
+            pageNum=1;
+        }
+        if (count!=null && pageNum >=count){
+            pageNum = count;
+        }
+        Page<Recruit> page = recruitService.getAll(pageNum-1,10,keywords);
+        Map<String,Object> map = new HashMap<String,Object>();
+        map.put("data",page.getContent());
+        map.put("pageNum",page.getTotalElements());
+        return map;
+    }
 }

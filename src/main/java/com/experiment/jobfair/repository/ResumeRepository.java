@@ -13,6 +13,6 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface ResumeRepository extends JpaRepository<Resume,Integer> {
 
-    @Query( value = "SELECT * FROM resume where name like %?1% ",nativeQuery = true)
+    @Query( value = "SELECT * FROM resume where name like %?1% AND delete_flag = 0",nativeQuery = true)
     Page<Resume> findAllLike(String keywords, PageRequest pageRequest);
 }

@@ -31,4 +31,10 @@ public class ApplicantServiceImpl implements ApplicantService {
         applicant.setSex(applicantDTO.getSex());
         return applicantRepository.save(applicant);
     }
+
+    @Override
+    public Applicant findById(Integer integer) {
+        Applicant applicant = applicantRepository.findById(integer).get();
+        return applicant;
+    }
 }

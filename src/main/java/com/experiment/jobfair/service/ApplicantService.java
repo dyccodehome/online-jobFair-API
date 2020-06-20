@@ -11,4 +11,6 @@ import com.experiment.jobfair.entity.Applicant;
 public interface ApplicantService {
 
     Applicant updateApplicant(ApplicantDTO applicantDTO);
+
+    Applicant findById(Integer integer);
 }

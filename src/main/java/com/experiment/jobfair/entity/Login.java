@@ -20,6 +20,7 @@ public class Login {
     @Column(nullable = false)
     private String password;
     private String salt;
+    private Integer user_id;
     private Integer is_admin_role;
     private Integer delete_flag;
     private Date create_time;
@@ -89,6 +90,14 @@ public class Login {
         this.update_time = update_time;
     }
 
+    public Integer getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(Integer user_id) {
+        this.user_id = user_id;
+    }
+
     @Override
     public String toString() {
         return "Login{" +
@@ -96,6 +105,7 @@ public class Login {
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", salt='" + salt + '\'' +
+                ", user_id=" + user_id +
                 ", is_admin_role=" + is_admin_role +
                 ", delete_flag=" + delete_flag +
                 ", create_time=" + create_time +

@@ -1,6 +1,6 @@
 package com.experiment.jobfair.service;
 
-import com.experiment.jobfair.entity.LoginUser;
+import com.experiment.jobfair.dto.LoginUser;
 import com.experiment.jobfair.utils.ResponseUtil;
 
 public interface LoginService {

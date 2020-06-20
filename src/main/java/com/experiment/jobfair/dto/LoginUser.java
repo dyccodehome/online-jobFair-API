@@ -1,4 +1,4 @@
-package com.experiment.jobfair.entity;
+package com.experiment.jobfair.dto;
 
 import lombok.Data;
 

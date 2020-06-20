@@ -35,8 +35,6 @@ public class Company {
 
     private String registeredCapital;
 
-    private Integer loginId;
-
     private Integer deleteFlag;
 
     private Date createTime;
@@ -107,14 +105,6 @@ public class Company {
         this.registeredCapital = registeredCapital;
     }
 
-    public Integer getLoginId() {
-        return loginId;
-    }
-
-    public void setLoginId(Integer loginId) {
-        this.loginId = loginId;
-    }
-
     public Integer getDeleteFlag() {
         return deleteFlag;
     }
@@ -150,7 +140,6 @@ public class Company {
                 ", scope='" + scope + '\'' +
                 ", phone='" + phone + '\'' +
                 ", registeredCapital='" + registeredCapital + '\'' +
-                ", loginId=" + loginId +
                 ", deleteFlag=" + deleteFlag +
                 ", createTime=" + createTime +
                 ", updateTime=" + updateTime +

@@ -1,7 +1,7 @@
 package com.experiment.jobfair.service.Impl;
 
 import com.experiment.jobfair.entity.Login;
-import com.experiment.jobfair.entity.LoginUser;
+import com.experiment.jobfair.dto.LoginUser;
 import com.experiment.jobfair.repository.LoginRepository;
 import com.experiment.jobfair.service.LoginService;
 import com.experiment.jobfair.utils.ResponseUtil;

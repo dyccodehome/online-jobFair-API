@@ -30,7 +30,6 @@ public class CompanyServiceImpl  implements CompanyService {
         company.setDeleteFlag(0);
         company.setLegalPerson(companyDTO.getLegalPerson());
         company.setName(companyDTO.getName());
-        company.setLoginId(companyDTO.getLoginId());
         company.setRegisteredCapital(companyDTO.getRegisteredCapital());
         company.setScope(companyDTO.getScope());
         company.setTaxNumber(companyDTO.getTaxNumber());
@@ -52,7 +51,6 @@ public class CompanyServiceImpl  implements CompanyService {
             company.setCreateTime(date);
             company.setLegalPerson(companyDTO.getLegalPerson());
             company.setName(companyDTO.getName());
-            company.setLoginId(companyDTO.getLoginId());
             company.setScope(companyDTO.getScope());
             company.setPhone(companyDTO.getPhone());
             company.setLegalPerson(companyDTO.getLegalPerson());

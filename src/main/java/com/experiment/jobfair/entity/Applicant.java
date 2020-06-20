@@ -24,7 +24,7 @@ public class Applicant {
 
     private String name;
 
-    private Integer sex;
+    private String sex;
 
     private String phone;
 
@@ -56,11 +56,11 @@ public class Applicant {
         this.name = name;
     }
 
-    public Integer getSex() {
+    public String getSex() {
         return sex;
     }
 
-    public void setSex(Integer sex) {
+    public void setSex(String sex) {
         this.sex = sex;
     }
 

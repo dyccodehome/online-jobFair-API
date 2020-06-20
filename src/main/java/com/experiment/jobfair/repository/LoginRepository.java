@@ -9,5 +9,5 @@ import java.util.Map;
 
 public interface LoginRepository extends JpaRepository<Login,Integer> {
     Login findLoginByUsername(String username);
-    List<Map<String,Object>> add(@Param("username") String username, @Param("password") String password);
+
 }

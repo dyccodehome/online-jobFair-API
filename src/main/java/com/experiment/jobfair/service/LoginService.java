@@ -5,5 +5,6 @@ import com.experiment.jobfair.utils.ResponseUtil;
 
 public interface LoginService {
     ResponseUtil getLogin(LoginUser loginUser);
-    LoginUser register(LoginUser loginUser);
+//    ResponseUtil addApplicant(LoginUser loginUser);
+//    ResponseUtil addCompany(LoginUser loginUser);
 }

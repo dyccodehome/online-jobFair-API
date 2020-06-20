@@ -4,6 +4,7 @@ import com.experiment.jobfair.dto.ApplicantDTO;
 import com.experiment.jobfair.entity.Applicant;
 import com.experiment.jobfair.repository.ApplicantRepository;
 import com.experiment.jobfair.service.ApplicantService;
+import com.experiment.jobfair.utils.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,5 +24,10 @@ public class ApplicantController {
     @RequestMapping(value = "/updateApplicant", method = RequestMethod.POST)
     public Applicant updateApplicant(@RequestBody ApplicantDTO applicantDTO){
         return applicantService.updateApplicant(applicantDTO);
+    }
+
+    @RequestMapping(value = "/addApplicant",method = RequestMethod.POST)
+    public ResponseUtil addOneApplicant(@RequestBody Applicant applicant){
+        return applicantService.addOneApplicant(applicant);
     }
 }

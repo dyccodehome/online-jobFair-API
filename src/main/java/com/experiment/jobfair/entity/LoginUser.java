@@ -7,5 +7,7 @@ import lombok.Data;
 public class LoginUser {
     private String username;
     private String password;
+    private Integer is_admin_role;
+    private Integer user_id;
 
 }

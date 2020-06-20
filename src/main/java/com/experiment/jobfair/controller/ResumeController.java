@@ -1,5 +1,6 @@
 package com.experiment.jobfair.controller;
 
+import com.experiment.jobfair.dto.ResumeDTO;
 import com.experiment.jobfair.entity.Resume;
 import com.experiment.jobfair.service.ResumeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,5 +38,15 @@ public class ResumeController {
         map.put("data",page.getContent());
         map.put("pageNum",page.getTotalElements());
         return map;
+    }
+
+    @RequestMapping(value = "/findById",method = RequestMethod.POST)
+    public Resume getResume(@RequestParam Integer resumeId){
+        return resumeService.findByResumeId(resumeId);
+    }
+
+    @RequestMapping(value = "/updateResume",method = RequestMethod.POST)
+    public Resume updateResume(@RequestBody ResumeDTO resumeDTO){
+        return resumeService.updateResume(resumeDTO);
     }
 }

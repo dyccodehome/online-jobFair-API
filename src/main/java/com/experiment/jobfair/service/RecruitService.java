@@ -20,4 +20,7 @@ public interface RecruitService {
 
     //取消招聘信息
     Recruit delRecruit(Integer integer);
+
+    //获取公司招聘信息
+    Page<Recruit> getAll(Integer pageNum, Integer size, String keywords);
 }

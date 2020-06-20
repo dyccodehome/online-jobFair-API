@@ -58,4 +58,11 @@ public class RecruitServiceImpl implements RecruitService {
         }
         return null;
     }
+
+    @Override
+    public Page<Recruit> getAll(Integer pageNum, Integer size, String keywords) {
+        PageRequest pageRequest = PageRequest.of(pageNum,size);
+        Page<Recruit> page = recruitRepository.findAllLike(keywords,pageRequest);
+        return page;
+    }
 }

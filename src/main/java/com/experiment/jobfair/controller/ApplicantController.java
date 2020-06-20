@@ -25,7 +25,7 @@ public class ApplicantController {
         return applicantService.updateApplicant(applicantDTO);
     }
 
-    @RequestMapping(value = "/findApplicant",method = RequestMethod.POST)
+    @RequestMapping(value = "/findApplicant",method = RequestMethod.GET)
     public Applicant getResume(@RequestParam Integer applicantId){
         return applicantService.findById(applicantId);
     }

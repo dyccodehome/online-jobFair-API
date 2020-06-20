@@ -8,7 +8,7 @@ package com.experiment.jobfair.dto;
 
 public class ApplicantDTO {
 
-    private Integer Id;
+    private Integer id;
 
     private String name;
 
@@ -19,11 +19,11 @@ public class ApplicantDTO {
     private String age;
 
     public Integer getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Integer id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getName() {
@@ -61,7 +61,7 @@ public class ApplicantDTO {
     @Override
     public String toString() {
         return "ApplicantDTO{" +
-                "Id=" + Id +
+                "id=" + id +
                 ", name='" + name + '\'' +
                 ", sex=" + sex +
                 ", phone='" + phone + '\'' +

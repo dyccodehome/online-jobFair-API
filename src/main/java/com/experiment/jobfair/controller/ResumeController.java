@@ -40,13 +40,14 @@ public class ResumeController {
         return map;
     }
 
-    @RequestMapping(value = "/findById",method = RequestMethod.POST)
-    public Resume getResume(@RequestParam Integer resumeId){
+    @RequestMapping(value = "/findById",method = RequestMethod.GET)
+    public Resume findResume(@RequestParam Integer resumeId){
         return resumeService.findByResumeId(resumeId);
     }
 
     @RequestMapping(value = "/updateResume",method = RequestMethod.POST)
     public Resume updateResume(@RequestBody ResumeDTO resumeDTO){
+        System.out.println(resumeDTO);
         return resumeService.updateResume(resumeDTO);
     }
 }

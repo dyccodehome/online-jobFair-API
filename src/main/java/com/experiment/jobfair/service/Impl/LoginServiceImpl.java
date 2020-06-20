@@ -30,4 +30,10 @@ public class LoginServiceImpl implements LoginService {
             return new ResponseUtil(0,"账号错误！",null);
         }
     }
+
+    @Override
+    public LoginUser register(LoginUser loginUser) {
+
+        return null;
+    }
 }

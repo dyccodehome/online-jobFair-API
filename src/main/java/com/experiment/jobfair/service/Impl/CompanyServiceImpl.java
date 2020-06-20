@@ -5,6 +5,8 @@ import com.experiment.jobfair.entity.Company;
 import com.experiment.jobfair.repository.CompanyRepository;
 import com.experiment.jobfair.service.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -28,13 +30,13 @@ public class CompanyServiceImpl  implements CompanyService {
         company.setCreateTime(date);
         company.setUpdateTime(date);
         company.setDeleteFlag(0);
-        company.setLegalPerson(companyDTO.getLegalPerson());
+        company.setLeagalPerson(companyDTO.getLegalPerson());
         company.setName(companyDTO.getName());
         company.setRegisteredCapital(companyDTO.getRegisteredCapital());
         company.setScope(companyDTO.getScope());
         company.setTaxNumber(companyDTO.getTaxNumber());
         company.setPhone(companyDTO.getPhone());
-        company.setLegalPerson(companyDTO.getLegalPerson());
+        company.setLeagalPerson(companyDTO.getLegalPerson());
 
         return companyRepository.save(company);
     }
@@ -49,11 +51,29 @@ public class CompanyServiceImpl  implements CompanyService {
             company.setTaxNumber(companyDTO.getTaxNumber());
             company.setRegisteredCapital(companyDTO.getRegisteredCapital());
             company.setCreateTime(date);
-            company.setLegalPerson(companyDTO.getLegalPerson());
+            company.setLeagalPerson(companyDTO.getLegalPerson());
             company.setName(companyDTO.getName());
             company.setScope(companyDTO.getScope());
             company.setPhone(companyDTO.getPhone());
-            company.setLegalPerson(companyDTO.getLegalPerson());
+            company.setLeagalPerson(companyDTO.getLegalPerson());
+            return companyRepository.save(company);
+        }
+        return null;
+    }
+
+    @Override
+    public Page<Company> getAll(Integer pageNum, Integer size, String keywords) {
+        PageRequest pageRequest = PageRequest.of(pageNum,size);
+        Page<Company> page = companyRepository.getPage(keywords,pageRequest);
+        return page;
+    }
+
+    @Override
+    public Company del(Integer integer) {
+        Company company = companyRepository.findById(integer).orElse(null);
+        if (company != null)
+        {
+            company.setDeleteFlag(1);
             return companyRepository.save(company);
         }
         return null;

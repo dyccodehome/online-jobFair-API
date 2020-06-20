@@ -5,6 +5,8 @@ import com.experiment.jobfair.entity.Applicant;
 import com.experiment.jobfair.repository.ApplicantRepository;
 import com.experiment.jobfair.service.ApplicantService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -36,5 +38,23 @@ public class ApplicantServiceImpl implements ApplicantService {
     public Applicant findById(Integer integer) {
         Applicant applicant = applicantRepository.findById(integer).get();
         return applicant;
+    }
+
+    @Override
+    public Page<Applicant> getAll(Integer pageNum, Integer size, String keywords) {
+        PageRequest pageRequest = PageRequest.of(pageNum,size);
+        Page<Applicant> page = applicantRepository.getPage(keywords,pageRequest);
+        return page;
+    }
+
+    @Override
+    public Applicant del(Integer integer) {
+        Applicant applicant = applicantRepository.findById(integer).orElse(null);
+        if (applicant != null)
+        {
+            applicant.setDeleteFlag(1);
+            return applicantRepository.save(applicant);
+        }
+        return null;
     }
 }

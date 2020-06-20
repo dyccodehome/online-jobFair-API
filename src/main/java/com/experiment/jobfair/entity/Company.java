@@ -27,7 +27,7 @@ public class Company {
 
     private String address;
 
-    private String legalPerson;
+    private String leagalPerson;
 
     private String scope;
 
@@ -73,12 +73,12 @@ public class Company {
         this.address = address;
     }
 
-    public String getLegalPerson() {
-        return legalPerson;
+    public String getLeagalPerson() {
+        return leagalPerson;
     }
 
-    public void setLegalPerson(String legalPerson) {
-        this.legalPerson = legalPerson;
+    public void setLeagalPerson(String leagalPerson) {
+        this.leagalPerson = leagalPerson;
     }
 
     public String getScope() {
@@ -136,7 +136,7 @@ public class Company {
                 ", taxNumber='" + taxNumber + '\'' +
                 ", name='" + name + '\'' +
                 ", address='" + address + '\'' +
-                ", legalPerson='" + legalPerson + '\'' +
+                ", leagalPerson='" + leagalPerson + '\'' +
                 ", scope='" + scope + '\'' +
                 ", phone='" + phone + '\'' +
                 ", registeredCapital='" + registeredCapital + '\'' +

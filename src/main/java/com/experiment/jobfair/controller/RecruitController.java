@@ -50,9 +50,9 @@ public class RecruitController {
         return recruitService.addRecruit(recruitDTO);
     }
 
-    @RequestMapping(value = "/delRecruit",method = RequestMethod.POST)
-    public Recruit delRecruit(@RequestParam Integer id){
-        return recruitService.delRecruit(id);
+    @RequestMapping(value = "/delRecruit",method = RequestMethod.GET)
+    public Recruit delRecruit(@RequestParam Integer pkId){
+        return recruitService.delRecruit(pkId);
     }
 
     @RequestMapping(value = "/queryRecruit",method = RequestMethod.GET)

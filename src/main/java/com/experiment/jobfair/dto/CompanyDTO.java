@@ -15,15 +15,13 @@ public class CompanyDTO {
 
     private String address;
 
-    private String legalPerson;
+    private String leagalPerson;
 
     private String scope;
 
     private String phone;
 
     private String registeredCapital;
-
-    private Integer loginId;
 
     public Integer getId() {
         return Id;
@@ -57,12 +55,12 @@ public class CompanyDTO {
         this.address = address;
     }
 
-    public String getLegalPerson() {
-        return legalPerson;
+    public String getLeagalPerson() {
+        return leagalPerson;
     }
 
-    public void setLegalPerson(String legalPerson) {
-        this.legalPerson = legalPerson;
+    public void setLeagalPerson(String leagalPerson) {
+        this.leagalPerson = leagalPerson;
     }
 
     public String getScope() {
@@ -89,15 +87,6 @@ public class CompanyDTO {
         this.registeredCapital = registeredCapital;
     }
 
-    public Integer getLoginId() {
-        return loginId;
-    }
-
-    public void setLoginId(Integer loginId) {
-        this.loginId = loginId;
-    }
-
-
     @Override
     public String toString() {
         return "CompanyDTO{" +
@@ -105,11 +94,10 @@ public class CompanyDTO {
                 ", taxNumber='" + taxNumber + '\'' +
                 ", name='" + name + '\'' +
                 ", address='" + address + '\'' +
-                ", legalPerson='" + legalPerson + '\'' +
+                ", leagalPerson='" + leagalPerson + '\'' +
                 ", scope='" + scope + '\'' +
                 ", phone='" + phone + '\'' +
                 ", registeredCapital='" + registeredCapital + '\'' +
-                ", loginId=" + loginId +
                 '}';
     }
 }

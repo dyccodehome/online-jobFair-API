@@ -1,14 +1,18 @@
 package com.experiment.jobfair.controller;
 
-import com.experiment.jobfair.dto.ApplicantDTO;
-import com.experiment.jobfair.dto.CompanyDTO;
-import com.experiment.jobfair.entity.Applicant;
 import com.experiment.jobfair.entity.Company;
-import com.experiment.jobfair.service.ApplicantService;
 import com.experiment.jobfair.service.CompanyService;
-import com.experiment.jobfair.utils.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * created by 邓益聪
+ * 2020-06-21
+ */
 
 @RequestMapping("/sys/api")
 @CrossOrigin
@@ -17,13 +21,25 @@ public class CompanyController {
     @Autowired
     private CompanyService companyService;
 
-    @RequestMapping(value = "/updateCompany", method = RequestMethod.POST)
-    public Company updateApplicant(@RequestBody CompanyDTO companyDTO){
-        return companyService.updateCompany(companyDTO);
+    Integer count;
+    @RequestMapping(value = "/queryCompany",method = RequestMethod.GET)
+    public Map getAll(@RequestParam Integer pageNum, @RequestParam String keywords){
+        if (pageNum == null || pageNum == 0)
+        {
+            pageNum=1;
+        }
+        if (count!=null && pageNum >=count){
+            pageNum = count;
+        }
+        Page<Company> page = companyService.getAll(pageNum-1,10,keywords);
+        Map<String,Object> map = new HashMap<String,Object>();
+        map.put("data",page.getContent());
+        map.put("pageNum",page.getTotalElements());
+        return map;
     }
 
-    @RequestMapping(value = "/addCompany",method = RequestMethod.POST)
-    public Company addCompany(@RequestBody CompanyDTO companyDTO){
-        return companyService.addCompany(companyDTO);
+    @RequestMapping(value = "/delCompany",method = RequestMethod.POST)
+    public Company del(@RequestParam Integer id){
+        return companyService.del(id);
     }
 }

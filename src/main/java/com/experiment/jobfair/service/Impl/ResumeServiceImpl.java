@@ -41,7 +41,7 @@ public class ResumeServiceImpl  implements ResumeService {
 
     @Override
     public Resume updateResume(ResumeDTO resumeDTO) {
-        Resume resume = resumeRepository.findById(resumeDTO.getId()).get();
+        Resume resume = resumeRepository.findById(Integer.valueOf(resumeDTO.getId())).get();
         Date date = new Date();
         resume.setAdvantage(resumeDTO.getAdvantage());
         resume.setAge(resumeDTO.getAge());

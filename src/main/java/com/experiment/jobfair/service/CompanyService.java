@@ -2,7 +2,7 @@ package com.experiment.jobfair.service;
 
 import com.experiment.jobfair.dto.CompanyDTO;
 import com.experiment.jobfair.entity.Company;
-import com.experiment.jobfair.utils.ResponseUtil;
+import org.springframework.data.domain.Page;
 
 /**
  * created by 邓益聪
@@ -11,8 +11,11 @@ import com.experiment.jobfair.utils.ResponseUtil;
 
 public interface CompanyService {
 
-//    ResponseUtil addCompany(CompanyDTO companyDTO);
     Company addCompany(CompanyDTO companyDTO);
 
     Company updateCompany(CompanyDTO companyDTO);
+
+    Page<Company> getAll(Integer pageNum, Integer size, String keywords);
+
+    Company del(Integer integer);
 }

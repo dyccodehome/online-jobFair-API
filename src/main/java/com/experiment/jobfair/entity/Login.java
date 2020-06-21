@@ -1,23 +1,20 @@
 package com.experiment.jobfair.entity;
 
 import lombok.Data;
+import org.hibernate.annotations.DynamicUpdate;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Data
+@DynamicUpdate
 public class Login {
     @Id
-    @GeneratedValue
-
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer Id;
-    @Column(nullable = false)
+
     private String username;
-    @Column(nullable = false)
+
     private String password;
     private String salt;
     private Integer user_id;
@@ -39,7 +36,7 @@ public class Login {
     }
 
     public void setUsername(String username) {
-        username = username;
+        this.username = username;
     }
 
     public String getPassword() {
@@ -50,12 +47,20 @@ public class Login {
         this.password = password;
     }
 
-    public String getAalt() {
+    public String getSalt() {
         return salt;
     }
 
-    public void setAalt(String aalt) {
-        this.salt = aalt;
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
+
+    public Integer getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(Integer user_id) {
+        this.user_id = user_id;
     }
 
     public Integer getIs_admin_role() {
@@ -88,14 +93,6 @@ public class Login {
 
     public void setUpdate_time(Date update_time) {
         this.update_time = update_time;
-    }
-
-    public Integer getUser_id() {
-        return user_id;
-    }
-
-    public void setUser_id(Integer user_id) {
-        this.user_id = user_id;
     }
 
     @Override

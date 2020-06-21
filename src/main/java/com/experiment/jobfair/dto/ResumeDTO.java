@@ -7,7 +7,7 @@ package com.experiment.jobfair.dto;
 
 
 public class ResumeDTO {
-    private Integer Id;
+    private Integer id;
 
     private String name;
 
@@ -32,11 +32,11 @@ public class ResumeDTO {
     private String blog;
 
     public Integer getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Integer id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getName() {
@@ -130,7 +130,7 @@ public class ResumeDTO {
     @Override
     public String toString() {
         return "ResumeDTO{" +
-                "Id=" + Id +
+                "id=" + id +
                 ", name='" + name + '\'' +
                 ", education='" + education + '\'' +
                 ", folk='" + folk + '\'' +

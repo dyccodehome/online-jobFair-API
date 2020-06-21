@@ -17,7 +17,7 @@ import java.util.Date;
 @DynamicUpdate
 public class Resume {
 
-    @javax.persistence.Id
+    @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer Id;
 

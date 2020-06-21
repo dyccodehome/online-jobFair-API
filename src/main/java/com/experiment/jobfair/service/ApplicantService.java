@@ -2,7 +2,7 @@ package com.experiment.jobfair.service;
 
 import com.experiment.jobfair.dto.ApplicantDTO;
 import com.experiment.jobfair.entity.Applicant;
-import com.experiment.jobfair.utils.ResponseUtil;
+import org.springframework.data.domain.Page;
 
 /**
  * created by 邓益聪
@@ -13,5 +13,9 @@ public interface ApplicantService {
 
     Applicant updateApplicant(ApplicantDTO applicantDTO);
 
-    ResponseUtil addOneApplicant(Applicant applicant);
+    Applicant findById(Integer integer);
+
+    Page<Applicant> getAll(Integer pageNum, Integer size, String keywords);
+
+    Applicant del(Integer integer);
 }

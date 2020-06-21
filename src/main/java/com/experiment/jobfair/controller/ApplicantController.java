@@ -51,9 +51,9 @@ public class ApplicantController {
         return map;
     }
 
-    @RequestMapping(value = "/delApplicant",method = RequestMethod.POST)
-    public Applicant del(@RequestParam Integer id){
-        return applicantService.del(id);
+    @RequestMapping(value = "/delApplicant",method = RequestMethod.GET)
+    public Applicant del(@RequestParam Integer pkId){
+        return applicantService.del(pkId);
     }
 
 }

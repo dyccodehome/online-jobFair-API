@@ -1,5 +1,8 @@
 package com.experiment.jobfair.controller;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
+import com.experiment.jobfair.dto.CompanyDTO;
 import com.experiment.jobfair.entity.Company;
 import com.experiment.jobfair.service.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +18,7 @@ import java.util.Map;
  */
 
 @RequestMapping("/sys/api")
-@CrossOrigin
+@CrossOrigin("http://localhost:8081")
 @RestController
 public class CompanyController {
     @Autowired
@@ -38,8 +41,22 @@ public class CompanyController {
         return map;
     }
 
-    @RequestMapping(value = "/delCompany",method = RequestMethod.POST)
-    public Company del(@RequestParam Integer id){
-        return companyService.del(id);
+    @RequestMapping(value = "/delCompany",method = RequestMethod.GET)
+    public Company del(@RequestParam Integer pkId){
+        System.out.println(pkId);
+        return companyService.del(pkId);
+    }
+
+    @RequestMapping(value = "/findCompanyById",method = RequestMethod.GET)
+    public Company getCompany(@RequestParam Integer companyId){
+        return companyService.findById(companyId);
+    }
+
+    @RequestMapping(value = "/addCompany",method = RequestMethod.POST)
+    public Company addCompany(@RequestBody String json){
+        System.out.println(json);
+        JSONObject jsonObject = JSONObject.parseObject(json);
+        CompanyDTO companyDTO = JSON.toJavaObject(jsonObject,CompanyDTO.class);
+        return companyService.addCompany(companyDTO);
     }
 }

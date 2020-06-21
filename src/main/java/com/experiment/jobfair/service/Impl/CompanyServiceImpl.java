@@ -30,13 +30,12 @@ public class CompanyServiceImpl  implements CompanyService {
         company.setCreateTime(date);
         company.setUpdateTime(date);
         company.setDeleteFlag(0);
-        company.setLeagalPerson(companyDTO.getLegalPerson());
+        company.setLeagalPerson(companyDTO.getLeagalPerson());
         company.setName(companyDTO.getName());
         company.setRegisteredCapital(companyDTO.getRegisteredCapital());
         company.setScope(companyDTO.getScope());
         company.setTaxNumber(companyDTO.getTaxNumber());
         company.setPhone(companyDTO.getPhone());
-        company.setLeagalPerson(companyDTO.getLegalPerson());
 
         return companyRepository.save(company);
     }
@@ -51,11 +50,10 @@ public class CompanyServiceImpl  implements CompanyService {
             company.setTaxNumber(companyDTO.getTaxNumber());
             company.setRegisteredCapital(companyDTO.getRegisteredCapital());
             company.setCreateTime(date);
-            company.setLeagalPerson(companyDTO.getLegalPerson());
+            company.setLeagalPerson(companyDTO.getLeagalPerson());
             company.setName(companyDTO.getName());
             company.setScope(companyDTO.getScope());
             company.setPhone(companyDTO.getPhone());
-            company.setLeagalPerson(companyDTO.getLegalPerson());
             return companyRepository.save(company);
         }
         return null;
@@ -77,5 +75,11 @@ public class CompanyServiceImpl  implements CompanyService {
             return companyRepository.save(company);
         }
         return null;
+    }
+
+    @Override
+    public Company findById(Integer integer) {
+        Company company = companyRepository.findById(integer).get();
+        return company;
     }
 }

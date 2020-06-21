@@ -18,4 +18,7 @@ public interface CompanyService {
     Page<Company> getAll(Integer pageNum, Integer size, String keywords);
 
     Company del(Integer integer);
+
+    Company findById(Integer integer);
+
 }

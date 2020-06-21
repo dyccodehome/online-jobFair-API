@@ -56,7 +56,7 @@ public class LoginServiceImpl implements LoginService {
         company.setTaxNumber(companyDTO.getTaxNumber());
         company.setName(companyDTO.getName());
         company.setAddress(companyDTO.getAddress());
-        company.setLeagalPerson(companyDTO.getLegalPerson());
+        company.setLeagalPerson(companyDTO.getLeagalPerson());
         company.setScope(companyDTO.getScope());
         company.setPhone(companyDTO.getPhone());
         company.setRegisteredCapital(companyDTO.getRegisteredCapital());

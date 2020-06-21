@@ -30,8 +30,6 @@ public class Applicant {
 
     private String age;
 
-    private Integer loginId;
-
     private Integer resumeId;
 
     private Integer deleteFlag;
@@ -80,14 +78,6 @@ public class Applicant {
         this.age = age;
     }
 
-    public Integer getLoginId() {
-        return loginId;
-    }
-
-    public void setLoginId(Integer loginId) {
-        this.loginId = loginId;
-    }
-
     public Integer getResumeId() {
         return resumeId;
     }
@@ -128,7 +118,6 @@ public class Applicant {
                 ", sex=" + sex +
                 ", phone='" + phone + '\'' +
                 ", age='" + age + '\'' +
-                ", loginId=" + loginId +
                 ", resumeId=" + resumeId +
                 ", deleteFlag=" + deleteFlag +
                 ", createTime=" + createTime +

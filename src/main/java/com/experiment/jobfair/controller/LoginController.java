@@ -1,7 +1,6 @@
 package com.experiment.jobfair.controller;
 
 import com.experiment.jobfair.entity.LoginUser;
-import com.experiment.jobfair.repository.LoginRepository;
 import com.experiment.jobfair.service.LoginService;
 import com.experiment.jobfair.utils.ResponseUtil;
 import org.springframework.web.bind.annotation.*;

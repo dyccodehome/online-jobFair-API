@@ -30,20 +30,32 @@ public class CompanyServiceImpl  implements CompanyService {
         company.setDeleteFlag(0);
         company.setLegalPerson(companyDTO.getLegalPerson());
         company.setName(companyDTO.getName());
-        company.setLoginId(companyDTO.getLoginId());
         company.setRegisteredCapital(companyDTO.getRegisteredCapital());
         company.setScope(companyDTO.getScope());
         company.setTaxNumber(companyDTO.getTaxNumber());
         company.setPhone(companyDTO.getPhone());
         company.setLegalPerson(companyDTO.getLegalPerson());
-
         return companyRepository.save(company);
+
+//        List<CompanyDTO> companyDTOList = companyDTORepository.findAll();
+//        boolean flag = false;
+//        for (CompanyDTO companyDTOs: companyDTOList) {
+//            if (companyDTO.getName().equals(companyDTOs.getName())){
+//                flag = true;
+//            }
+//        }
+//        if (flag){
+//            return new ResponseUtil(0,"account exist",1);
+//        }else {
+//            companyDTORepository.save(companyDTO);
+//            return new ResponseUtil(1,"save success",null);
+//        }
     }
 
     @Override
     public Company updateCompany(CompanyDTO companyDTO) {
         Company company = companyRepository.findById(companyDTO.getId()).get();
-        if (company !=null)
+        if (company != null)
         {
             Date date = new Date();
             company.setAddress(companyDTO.getAddress());
@@ -52,7 +64,6 @@ public class CompanyServiceImpl  implements CompanyService {
             company.setCreateTime(date);
             company.setLegalPerson(companyDTO.getLegalPerson());
             company.setName(companyDTO.getName());
-            company.setLoginId(companyDTO.getLoginId());
             company.setScope(companyDTO.getScope());
             company.setPhone(companyDTO.getPhone());
             company.setLegalPerson(companyDTO.getLegalPerson());

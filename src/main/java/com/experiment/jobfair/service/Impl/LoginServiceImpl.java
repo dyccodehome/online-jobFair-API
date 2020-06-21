@@ -1,23 +1,18 @@
 package com.experiment.jobfair.service.Impl;
 
-import com.experiment.jobfair.entity.Applicant;
 import com.experiment.jobfair.entity.Login;
 import com.experiment.jobfair.entity.LoginUser;
 import com.experiment.jobfair.repository.LoginRepository;
-import com.experiment.jobfair.repository.LoginUserRepository;
 import com.experiment.jobfair.service.LoginService;
 import com.experiment.jobfair.utils.ResponseUtil;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 @Service
 public class LoginServiceImpl implements LoginService{
     @Resource
     private LoginRepository loginRepository;
-
-
 
 
     @Override

@@ -34,7 +34,7 @@ public class LoginServiceImpl implements LoginService {
     private ResumeRepository resumeRepository;
 
 
-    @Override
+    @Override//登陆信息验证
     public ResponseUtil getLogin(LoginUser loginUser) {
         Login login = loginRepository.findLoginByUsername(loginUser.getUsername());
         //账号有效
@@ -50,7 +50,7 @@ public class LoginServiceImpl implements LoginService {
         }
     }
 
-    @Override
+    @Override//企业注册信息设置
     public Company signUpCompany(CompanyDTO companyDTO) {
         Company company = new Company();
         company.setTaxNumber(companyDTO.getTaxNumber());
@@ -79,7 +79,7 @@ public class LoginServiceImpl implements LoginService {
         return company;
     }
 
-    @Override
+    @Override//应聘者注册信息设置
     public Applicant signUpApplicant(ApplicantDTO applicantDTO) {
         Resume resume = new Resume();
         resume.setName(applicantDTO.getName());
